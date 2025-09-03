@@ -86,7 +86,7 @@ if not groq_api_key:
 
 # --- Core Logic ---
 try:
-    model = ChatGroq(model="Llama3-8b-8192", groq_api_key=groq_api_key)
+    model = ChatGroq(model="llama-3.3-70b-versatile", groq_api_key=groq_api_key)
     prompt = ChatPromptTemplate.from_messages(
         [("system", "Translate the following into {language}:"), ("user", "{text}")]
     )
@@ -143,4 +143,5 @@ parser = StrOutputParser()
 
 # 4. They are all piped together to form the chain
 chain = prompt | model | parser
+
     """, language="python")
